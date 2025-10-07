@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ultra Neon Universe Portfolio – Designed with precision, passion, and futuristic creativity." />
+  <title>Sonu Kumar Soni | Ultra Neon Universe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2e0f2e95d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- 🌌 Floating Neon Orbs -->
+  <div class="neon-orbs">
+    <div class="neon-orb"></div>
+    <div class="neon-orb"></div>
+    <div class="neon-orb"></div>
+    <div class="neon-orb"></div>
+  </div>
+
+  <!-- 💫 Neon Navbar -->
+  <nav class="navbar fade-in">
+    <div class="nav-container">
+      <a href="#home" class="logo">Sonu<span>Dev</span></a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🌠 HERO SECTION -->
+  <section id="home" class="container fade-up">
+    <div class="profile-wrapper">
+      <div class="rotating-ring"></div>
+      <img src="profile.jpg" alt="Sonu Kumar Soni" class="profile-img" />
+    </div>
+    <h1>Hi, I’m <span>Sonu Kumar Soni</span></h1>
+    <p class="tagline typewriter">A Passionate Frontend Developer & Creative Designer 🚀</p>
+    <a href="#contact" class="btn">Let’s Connect</a>
+  </section>
+
+  <!-- 💎 ABOUT SECTION -->
+  <section id="about" class="container fade-up">
+    <h2>About Me</h2>
+    <div class="about">
+      <p>
+        I’m a creative <strong>Frontend Developer</strong> who loves turning imagination into interactive web experiences.
+        My goal is to make every design shine with futuristic neon aesthetics and smooth performance.  
+        <br><br>
+        Inspired by motion, light, and perfection — I craft projects that are both visually stunning and technically flawless.
+      </p>
+    </div>
+  </section>
+
+  <!-- ⚡ SKILLS SECTION -->
+  <section id="skills" class="container fade-up">
+    <h2>My Skills</h2>
+    <div class="skill-box">
+      <div><i class="fab fa-html5"></i> HTML5</div>
+      <div><i class="fab fa-css3-alt"></i> CSS3</div>
+      <div><i class="fab fa-js"></i> JavaScript</div>
+      <div><i class="fab fa-react"></i> React</div>
+      <div><i class="fab fa-node-js"></i> Node.js</div>
+      <div><i class="fab fa-git-alt"></i> Git & GitHub</div>
+      <div><i class="fab fa-figma"></i> Figma</div>
+      <div>Tailwind CSS</div>
+      <div>MongoDB</div>
+      <div>UI / UX Design</div>
+    </div>
+  </section>
+
+  <!-- 💌 CONTACT SECTION -->
+  <section id="contact" class="container fade-up">
+    <h2>Contact Me</h2>
+    <p class="tagline">Let’s create something extraordinary together 🌠</p>
+    <a href="mailto:sonukumar@example.com" class="btn">Email Me</a>
+  </section>
+
+  <!-- 🌌 FOOTER -->
+  <footer>
+    <p>© 2025 Sonu Kumar Soni | Designed with 💚 & Light in the Ultra Neon Universe</p>
+  </footer>
+
+  <!-- ⚡ Neon Mouse Glow -->
+  <script>
+    const glow = document.createElement("div");
+    glow.classList.add("neon-glow");
+    document.body.appendChild(glow);
+
+    window.addEventListener("mousemove", e => {
+      glow.style.opacity = 1;
+      glow.style.left = e.pageX - 20 + "px";
+      glow.style.top = e.pageY - 20 + "px";
+    });
+    window.addEventListener("mouseout", () => glow.style.opacity = 0);
+
+    // 🔥 Navbar Active Scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (scrollY >= sectionTop) current = section.getAttribute("id");
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // ✨ Reveal Animations
+    const fadeElements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+  </html>
